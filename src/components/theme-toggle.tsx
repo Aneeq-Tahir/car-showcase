@@ -8,8 +8,9 @@ import { Button } from "@/components/ui/button";
 
 export default function ModeToggle() {
    const { theme, setTheme } = useTheme();
+   const preferScheme = typeof window !== 'undefined' && window.matchMedia("(prefers-color-scheme:dark)").matches
    const [darkMode, setMode] = React.useState(
-      window.matchMedia("(prefers-color-scheme:dark)").matches
+      preferScheme
    );
 
    const handleTheme = () => {

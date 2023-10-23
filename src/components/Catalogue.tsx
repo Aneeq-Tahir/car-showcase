@@ -14,7 +14,7 @@ const Catalogue = async ({ searchParams }: { searchParams: FilterProps }) => {
       year: searchParams.year || 2015,
    });
    const isDataEmpty = !Array.isArray(cars) || cars.length < 1 || !cars;
-   console.log(searchParams.limit)
+
    return (
       <div className="mt-12 sm:px-16 px-6 max-w-[1440px] mx-auto py-4">
          <div className="flex flex-col items-start justify-start gap-y-2.5 text-black-100">
@@ -26,8 +26,8 @@ const Catalogue = async ({ searchParams }: { searchParams: FilterProps }) => {
             {!isDataEmpty ? (
                <section className="mt-16 mx-auto flex justify-center items-center flex-col gap-2">
                   <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14">
-                     {cars.map((car) => (
-                        <CarCard key={car.name} car={car} />
+                     {cars.map((car, i) => (
+                        <CarCard key={i} car={car} />
                      ))}
                   </div>
                   <ShowMore
