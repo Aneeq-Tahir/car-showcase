@@ -25,7 +25,7 @@ const ShowMore = ({
 
    return (
       !isNext && (
-         <Button onClick={handleClick} className={`bg-amber-500 mx-auto`}>
+         <Button onClick={handleClick} className={`bg-amber-500 mx-auto mt-5`}>
             ShowMore
          </Button>
       )

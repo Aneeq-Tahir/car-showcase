@@ -21,7 +21,7 @@ const Hero = () => {
                Explore Cars
             </Button>
          </div>
-         <div className="xl:flex-[1.5] flex justify-end items-end w-full xl:h-screen">
+         <div className="xl:flex-[1.5] hidden md:flex justify-end items-end w-full xl:h-screen">
             <div className="relative xl:w-full w-[90%] xl:h-full h-[590px]">
                <Image
                   src={"/rocco.png"}
