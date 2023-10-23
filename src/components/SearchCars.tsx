@@ -85,7 +85,7 @@ const SearchCars = () => {
             </CustomFilter>
          </div>
          <Button type="submit" size={"icon"}>
-            <BsSearch className="dark:text-white" />
+            <BsSearch className="dark:text-white text-black" />
          </Button>
       </form>
    );
