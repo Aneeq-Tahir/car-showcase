@@ -2,6 +2,11 @@
   "name": "car-showcase",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@8.2.0",
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=7"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
