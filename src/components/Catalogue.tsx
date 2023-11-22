@@ -14,7 +14,10 @@ const Catalogue = async ({ searchParams }: { searchParams: FilterProps }) => {
       year: searchParams.year || 2015,
    });
    const isDataEmpty = !Array.isArray(cars) || cars.length < 1 || !cars;
-
+   
+   const lastCar = searchParams.limit || 8;
+   const firstCar = lastCar - 8;
+   console.log(cars.length)
    return (
       <div className="mt-12 sm:px-16 px-6 max-w-[1440px] mx-auto py-4">
          <div className="flex flex-col items-start justify-start gap-y-2.5 text-black-100">
@@ -26,9 +29,13 @@ const Catalogue = async ({ searchParams }: { searchParams: FilterProps }) => {
             {!isDataEmpty ? (
                <section className="mt-16 mx-auto flex justify-center items-center flex-col gap-2">
                   <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14">
-                     {cars.map((car, i) => (
-                        <CarCard key={i} car={car} />
-                     ))}
+                     {cars.map((car, i) =>
+                        i >= firstCar && i <= lastCar ? (
+                           <CarCard key={i} car={car} />
+                        ) : (
+                           ""
+                        )
+                     )}
                   </div>
                   <ShowMore
                      pageNumber={(searchParams.limit || 8) / 8}
